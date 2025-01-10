@@ -1,4 +1,5 @@
 import Image from "next/image";
+import backgroundImage from "@/public/background.webp";
 export interface UserData {
   userName: string;
   mobileNo: string;
@@ -24,8 +25,14 @@ export default function Home({
 }) {
   console.log(searchParams, "props");
   return (
-    <main className="">
-      <div className="resume-container">
+    <div className=" w-full h-[100vh] flex justify-center items-center ">
+      <Image
+        src={backgroundImage}
+        alt="Background"
+        className="absolute inset-0 w-full h-full object-fill -z-0"
+        layout="fill"
+      />
+      <div className="resume-container z-10">
         <div className="header">
           {/* <img src="profile-photo.jpg" alt="Profile Photo" /> */}
           <div>
@@ -126,6 +133,6 @@ export default function Home({
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
